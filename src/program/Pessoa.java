@@ -8,7 +8,7 @@ public class Pessoa {
     private String sexo;
     private int afinidade;
 
-    public Pessoa(String nome, int idade, String sexo) {    //f(n) = 4
+    public Pessoa(String nome, int idade, String sexo) {
         setNome(nome);
         setIdade(idade);
         setSexo(sexo);

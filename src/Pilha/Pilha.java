@@ -36,7 +36,7 @@ public class Pilha<T> {
         return isNull(topo);
     }
 
-    public void adcPilha(T valor) {             //f(n) = 5
+    public void adcPilha(T valor) {
         if (estaVazia()) {
             topo = new Item();
             topo.setValor(valor);
@@ -48,7 +48,7 @@ public class Pilha<T> {
         }
     }
 
-    public T esvaziarPilha() throws Exception {         //f(n) = 4
+    public T esvaziarPilha() throws Exception {
         if (estaVazia())
             throw new Exception("A pilha está vazia");
         else {
@@ -58,7 +58,7 @@ public class Pilha<T> {
         }
     }
 
-     public T retornar() {                       //f(n) = 2
+     public T retornar() {
         T valor = topo.getValor();
         return valor;
     }

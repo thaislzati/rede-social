@@ -89,7 +89,7 @@ public class AppRedeSocial {
                 idade = -1; //recebe esse valor para que ela caia no while da classe pessoa
             }
         } while (idade < 0);
-        return idade;                                   
+        return idade;
     }
 
     public static String adcSexo(Scanner leia) {

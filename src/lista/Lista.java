@@ -15,28 +15,28 @@ public class Lista<T> {
         return this.tamanho;
     }
 
-    public void adc(T valor) {                 //f(n) = 7
-        No<T> no = new No();                                   //1
-        no.setValor(valor);                                         //1
+    public void adc(T valor) {
+        No<T> no = new No();
+        no.setValor(valor);
 
-        if (this.primeiro == null && this.ultimo == null) {         //2
-            this.primeiro = no;                                     //1
+        if (this.primeiro == null && this.ultimo == null) {
+            this.primeiro = no;
         } else {
             this.ultimo.setProximo(no);
         }
-        this.ultimo = no;                                           //1
-        this.tamanho++;                                             //1
+        this.ultimo = no;
+        this.tamanho++;
     }
 
-    public void remover(T pessoa) {  //f(n) = 10n + 4
-        No<T> anterior = null;                                    //1
-        No<T> atual = getPrimeiro();                              //1
+    public void remover(T pessoa) {
+        No<T> anterior = null;
+        No<T> atual = getPrimeiro();
 
-        for (int i = 0; i < this.getTamanho(); i++) {                   //2+2n
-            if (atual.getValor().equals(pessoa)) {                        //n
-                if (this.tamanho == 1) {   //remoção do primeiro valor   //n
-                    this.primeiro = null;                               //n
-                    this.ultimo = null;                                 //n
+        for (int i = 0; i < this.getTamanho(); i++) {
+            if (atual.getValor().equals(pessoa)) {
+                if (this.tamanho == 1) {   //remoção do primeiro valor
+                    this.primeiro = null;
+                    this.ultimo = null;
 
                 } else if (atual == primeiro) {// remoção de valores do meio
                     this.primeiro = atual.getProximo();
@@ -49,26 +49,26 @@ public class Lista<T> {
                 } else {
                     anterior.setProximo(atual.getProximo());
                 }
-                tamanho--;                                          //n
-                break;                                              //n
+                tamanho--;
+                break;
             }
-            anterior = atual;                                          //n
-            atual = atual.getProximo();                                //n
+            anterior = atual;
+            atual = atual.getProximo();
         }
     }
 
     @Override
-    public String toString() {          //f(n) = 3n + 5
-        StringBuilder sb = new StringBuilder();                         //1
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
         if (this.tamanho == 0) {
             System.out.println("A lista está vazia! ");
-        } else {                                                        //1
-            No<T> p = primeiro;                                    //1
-            while (p != null) {                                         //n+1
-                sb.append(p.getValor());                                //n
-                p = p.getProximo();                                     //n
+        } else {
+            No<T> p = primeiro;
+            while (p != null) {
+                sb.append(p.getValor());
+                p = p.getProximo();
             }
         }
-        return sb.toString();                                           //1
+        return sb.toString();
     }
 }
